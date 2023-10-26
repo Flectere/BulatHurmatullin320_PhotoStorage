@@ -1,0 +1,9 @@
+﻿<Application x:Class="BulatHurmatullin320_PhotoStorage.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:BulatHurmatullin320_PhotoStorage"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
