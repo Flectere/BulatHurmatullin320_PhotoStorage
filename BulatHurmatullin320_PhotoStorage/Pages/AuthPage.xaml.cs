@@ -34,9 +34,11 @@ namespace BulatHurmatullin320_PhotoStorage.Pages
             string name = NameTb.Text.Trim();
             string surname = SurnameTb.Text.Trim();
             User CurrentUser = DB.DbConnection.Entities.User.FirstOrDefault(User => User.Name == name && User.Surname == surname);
+
             MessageBox.Show(surname);
             if (CurrentUser != null)
             {
+                MessageBox.Show("Вы вошли");
                 NavigationService.Navigate(new MainPage());
             }
             else
