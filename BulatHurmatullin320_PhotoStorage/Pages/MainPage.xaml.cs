@@ -27,17 +27,41 @@ namespace BulatHurmatullin320_PhotoStorage.Pages
         {
             user = CurrentUser;
             InitializeComponent();
+            if (user.ID == 1)
+            {
+                AnimalsList.ItemsSource = animals.Where(i => i.IdType == 1).ToList();
+            }
+            else
+            {
+                AnimalsList.ItemsSource = animals.Where(i => i.IdType == 2).ToList();
+            }
+            
             animals = new List<Animal>(DbConnection.Entities.Animal.ToList());
             this.DataContext = this;
         }
         private void TypeCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            AnimalsList.ItemsSource = animals.Where(i => i.Name == TypeCb.SelectedItem.ToString()).ToList();
+            if (user.ID == 1)
+            {
+                AnimalsList.ItemsSource = animals.Where(i => i.Name == TypeCb.SelectedItem.ToString() && i.IdType==1).ToList();
+            }
+            else
+            {
+                AnimalsList.ItemsSource = animals.Where(i => i.Name == TypeCb.SelectedItem.ToString() && i.IdType == 2).ToList();
+            }
         }
 
         private void SearchTb_TextChanged(object sender, TextChangedEventArgs e)
         {
-            AnimalsList.ItemsSource = animals.Where(i => i.Description.StartsWith(SearchTb.Text)).ToList();
+            if (user.ID == 1)
+            {
+                AnimalsList.ItemsSource = animals.Where(i => i.Description.StartsWith(SearchTb.Text) && i.IdType == 1).ToList();
+            }
+            else
+            {
+                AnimalsList.ItemsSource = animals.Where(i => i.Description.StartsWith(SearchTb.Text) && i.IdType == 2).ToList();
+            }
+            
         }
 
         private void AddBt_Click(object sender, RoutedEventArgs e)
