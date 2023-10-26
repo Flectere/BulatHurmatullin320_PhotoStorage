@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Security.Authentication;
 using System.Text;
@@ -32,6 +33,16 @@ namespace BulatHurmatullin320_PhotoStorage.Pages
         {
             string name = NameTb.Text.Trim();
             string surname = SurnameTb.Text.Trim();
+            User CurrentUser = DB.DbConnection.Entities.User.FirstOrDefault(User => User.Name == name && User.Surname == surname);
+            MessageBox.Show(surname);
+            if (CurrentUser != null)
+            {
+                NavigationService.Navigate(new MainPage());
+            }
+            else
+            {
+                MessageBox.Show("Такого пользователя нет!!!!");
+            }
         }
     }
 }
