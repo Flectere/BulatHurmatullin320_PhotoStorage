@@ -43,6 +43,7 @@ namespace BulatHurmatullin320_PhotoStorage.Pages
             }
             ....132''
             else
+
             {
                 MessageBox.Show("Такого пользователя нет!!!!");
             }
