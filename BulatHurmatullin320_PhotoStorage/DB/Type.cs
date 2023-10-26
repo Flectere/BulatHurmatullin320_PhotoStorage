@@ -12,10 +12,18 @@ namespace BulatHurmatullin320_PhotoStorage.DB
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Type
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Type()
+        {
+            this.Animal = new HashSet<Animal>();
+        }
+    
         public int ID { get; set; }
-        public string Login { get; set; }
-        public string Password { get; set; }
+        public string Name { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Animal> Animal { get; set; }
     }
 }

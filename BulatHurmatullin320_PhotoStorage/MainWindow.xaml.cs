@@ -24,7 +24,7 @@ namespace BulatHurmatullin320_PhotoStorage
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new AuthPage());
+            MainFrame.NavigationService.Navigate(new AuthPage());
         }
     }
 }

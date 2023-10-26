@@ -13,10 +13,10 @@ namespace BulatHurmatullin320_PhotoStorage.DB
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AnimalsPhotoEntities : DbContext
+    public partial class AnimalsPhotoEntities2 : DbContext
     {
-        public AnimalsPhotoEntities()
-            : base("name=AnimalsPhotoEntities")
+        public AnimalsPhotoEntities2()
+            : base("name=AnimalsPhotoEntities2")
         {
         }
     
@@ -28,5 +28,6 @@ namespace BulatHurmatullin320_PhotoStorage.DB
         public virtual DbSet<Animal> Animal { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<Type> Type { get; set; }
     }
 }

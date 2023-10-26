@@ -18,6 +18,8 @@ namespace BulatHurmatullin320_PhotoStorage.DB
         public string Name { get; set; }
         public string Description { get; set; }
         public byte[] Photo { get; set; }
-        public string Type { get; set; }
+        public Nullable<int> IdType { get; set; }
+    
+        public virtual Type Type1 { get; set; }
     }
 }

@@ -8,6 +8,6 @@ namespace BulatHurmatullin320_PhotoStorage.DB
 {
     internal class DbConnection
     {
-        public static AnimalsPhotoEntities Entities = new AnimalsPhotoEntities();
+        public static AnimalsPhotoEntities2 Entities = new AnimalsPhotoEntities2();
     }
 }

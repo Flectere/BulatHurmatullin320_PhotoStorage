@@ -31,19 +31,14 @@ namespace BulatHurmatullin320_PhotoStorage.Pages
 
         private void EnterBt_Click(object sender, RoutedEventArgs e)
         {
-            string name = NameTb.Text.Trim();
-            string surname = SurnameTb.Text.Trim();
-            User CurrentUser = DB.DbConnection.Entities.User.FirstOrDefault(User => User.Name == name && User.Surname == surname);
-
-            MessageBox.Show(surname);
+            string login = LoginTb.Text.Trim();
+            string password = PasswordTb.Password.Trim();
+            User CurrentUser = DB.DbConnection.Entities.User.FirstOrDefault(User => User.Login == login && User.Password == password);
             if (CurrentUser != null)
             {
-                MessageBox.Show("Вы вошли");
                 NavigationService.Navigate(new MainPage());
             }
-            ....132''
             else
-
             {
                 MessageBox.Show("Такого пользователя нет!!!!");
             }
