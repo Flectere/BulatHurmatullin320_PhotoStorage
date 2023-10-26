@@ -36,7 +36,7 @@ namespace BulatHurmatullin320_PhotoStorage.Pages
             User CurrentUser = DB.DbConnection.Entities.User.FirstOrDefault(User => User.Login == login && User.Password == password);
             if (CurrentUser != null)
             {
-                NavigationService.Navigate(new MainPage());
+                NavigationService.Navigate(new MainPage(CurrentUser));
             }
             else
             {

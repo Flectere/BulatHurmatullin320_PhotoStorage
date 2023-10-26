@@ -22,28 +22,27 @@ namespace BulatHurmatullin320_PhotoStorage.Pages
     public partial class MainPage : Page
     {
         public static List<Animal> animals {  get; set; }
-        public MainPage()
+        public User user;
+        public MainPage(User CurrentUser)
         {
+            user = CurrentUser;
             InitializeComponent();
             animals = new List<Animal>(DbConnection.Entities.Animal.ToList());
             this.DataContext = this;
         }
-
-       
-
-        private void GenderCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void TypeCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            AnimalsList.ItemsSource = animals.Where(i => i.Name == TypeCb.SelectedItem.ToString()).ToList();
         }
 
         private void SearchTb_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            AnimalsList.ItemsSource = animals.Where(i => i.Description.StartsWith(SearchTb.Text)).ToList();
         }
 
         private void AddBt_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new AddAnimal());
+            NavigationService.Navigate(new AddAnimal(user));
         }
     }
 }

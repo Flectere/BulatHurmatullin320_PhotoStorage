@@ -29,8 +29,10 @@ namespace BulatHurmatullin320_PhotoStorage.Pages
         public static List<DB.Type> types { get; set; }
 
         public Animal animal = new Animal();
-        public AddAnimal()
+        public User Currentuser;
+        public AddAnimal(User user)
         {
+            Currentuser = user;
             InitializeComponent();
             types = new List<DB.Type>(DB.DbConnection.Entities.Type);
             this.DataContext = this;
@@ -42,7 +44,7 @@ namespace BulatHurmatullin320_PhotoStorage.Pages
             animal.Description = DescriptonTb.Text;
             DB.DbConnection.Entities.Animal.Add(animal);
             DB.DbConnection.Entities.SaveChanges();
-            NavigationService.Navigate(new MainPage());
+            NavigationService.Navigate(new MainPage(Currentuser));
         }
 
         private void AddImg_Click(object sender, RoutedEventArgs e)
