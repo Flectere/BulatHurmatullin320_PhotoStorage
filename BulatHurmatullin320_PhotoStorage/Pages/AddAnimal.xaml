@@ -71,7 +71,7 @@
                     VerticalAlignment="Center"
                     FontSize="15"
                     FontWeight="DemiBold" Margin="0"/>
-            <ComboBox x:Name="GenderCb"
+            <ComboBox x:Name="TypeCb"
                     Width="100"
                     Height="20" 
                     ItemsSource="{Binding types}">

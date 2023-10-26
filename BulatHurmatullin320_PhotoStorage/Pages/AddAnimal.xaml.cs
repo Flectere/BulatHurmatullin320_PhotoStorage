@@ -42,6 +42,7 @@ namespace BulatHurmatullin320_PhotoStorage.Pages
         {
             animal.Name = NameTb.Text;
             animal.Description = DescriptonTb.Text;
+            animal.IdType = TypeCb.SelectedIndex+1;
             DB.DbConnection.Entities.Animal.Add(animal);
             DB.DbConnection.Entities.SaveChanges();
             NavigationService.Navigate(new MainPage(Currentuser));
