@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BulatHurmatullin320_PhotoStorage.Pages;
 
 namespace BulatHurmatullin320_PhotoStorage
 {
@@ -23,6 +24,7 @@ namespace BulatHurmatullin320_PhotoStorage
         public MainWindow()
         {
             InitializeComponent();
+            MainFrame.Navigate(new AuthPage());
         }
     }
 }
